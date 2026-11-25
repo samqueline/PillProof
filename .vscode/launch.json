@@ -1,0 +1,41 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Pill Proof (Chrome Web)",
+      "cwd": "frontend",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "chrome"
+    },
+    {
+      "name": "Pill Proof (Windows Desktop)",
+      "cwd": "frontend",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "windows"
+    },
+    {
+      "name": "Pill Proof (Android / Connected Device)",
+      "cwd": "frontend",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "Backend Server",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/backend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "console": "integratedTerminal"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Stack (Backend + Chrome Web)",
+      "configurations": ["Backend Server", "Pill Proof (Chrome Web)"]
+    }
+  ]
+}
+

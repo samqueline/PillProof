@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: pill_proof_backend
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - NODE_ENV=development
+      - MONGODB_URI=mongodb+srv://samanthajacqueline30csb_db_user:12345@cluster0.vwv8hxm.mongodb.net/pill_proof?retryWrites=true&w=majority
+      - JWT_SECRET=your_jwt_secret_key_minimum_32_characters_here
+      - JWT_EXPIRES_IN=7d
+      - CORS_ORIGIN=*
+    restart: unless-stopped
